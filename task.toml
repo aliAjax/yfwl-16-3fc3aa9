@@ -1,0 +1,30 @@
+schema_version = "1.3"
+
+[task]
+name = "local/queue-network-routing-recovery"
+description = "Recover unlabeled queue counters, routing probabilities, exit rates, and service rates, then validate a deterministic throughput simulation."
+authors = [{ name = "batch-d" }]
+keywords = ["simulation-modeling", "queueing-network", "inverse-problem", "routing", "calibration"]
+
+[agent]
+timeout_sec = 3600
+user = "worker"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 2048
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+workdir = "/app"
+
+[verifier]
+timeout_sec = 120
+user = "worker"
+
+[metadata]
+difficulty = "expert"
+category = "simulation"
+tags = ["queueing-network", "routing-recovery", "least-squares", "deterministic-simulation"]
+expert_time_estimate = "75m"

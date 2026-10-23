@@ -1,0 +1,198 @@
+{
+  "schema_version": 1,
+  "weight_policy": {
+    "version": 1,
+    "basis": "business_priority",
+    "core_min_share": 0.5
+  },
+  "gate_tests": [
+    "test_outputs.py::test_main_queue_gate"
+  ],
+  "tests": {
+    "test_outputs.py::test_success_channels_are_empty": {
+      "priority": "supporting",
+      "weight": 0.015,
+      "rationale": "支撑输入契约、历史恢复或确定性仿真，保护主结果不被错误批次污染。"
+    },
+    "test_outputs.py::test_report_keys_are_exact": {
+      "priority": "supporting",
+      "weight": 0.015,
+      "rationale": "支撑输入契约、历史恢复或确定性仿真，保护主结果不被错误批次污染。"
+    },
+    "test_outputs.py::test_node_map_keys_are_exact": {
+      "priority": "supporting",
+      "weight": 0.015,
+      "rationale": "支撑输入契约、历史恢复或确定性仿真，保护主结果不被错误批次污染。"
+    },
+    "test_outputs.py::test_routing_keys_are_exact": {
+      "priority": "supporting",
+      "weight": 0.015,
+      "rationale": "支撑输入契约、历史恢复或确定性仿真，保护主结果不被错误批次污染。"
+    },
+    "test_outputs.py::test_exit_keys_are_exact": {
+      "priority": "supporting",
+      "weight": 0.015,
+      "rationale": "支撑输入契约、历史恢复或确定性仿真，保护主结果不被错误批次污染。"
+    },
+    "test_outputs.py::test_service_keys_are_exact": {
+      "priority": "supporting",
+      "weight": 0.015,
+      "rationale": "支撑输入契约、历史恢复或确定性仿真，保护主结果不被错误批次污染。"
+    },
+    "test_outputs.py::test_simulation_keys_are_exact": {
+      "priority": "supporting",
+      "weight": 0.015,
+      "rationale": "支撑输入契约、历史恢复或确定性仿真，保护主结果不被错误批次污染。"
+    },
+    "test_outputs.py::test_node_map_is_sorted": {
+      "priority": "supporting",
+      "weight": 0.015,
+      "rationale": "支撑输入契约、历史恢复或确定性仿真，保护主结果不被错误批次污染。"
+    },
+    "test_outputs.py::test_mapping_matches_wave_and_service_grade": {
+      "priority": "core",
+      "weight": 0.07,
+      "rationale": "核心排队网映射、路由或服务率结果，直接影响换线复核能否发布。"
+    },
+    "test_outputs.py::test_routing_probabilities_match_truth": {
+      "priority": "core",
+      "weight": 0.07,
+      "rationale": "核心排队网映射、路由或服务率结果，直接影响换线复核能否发布。"
+    },
+    "test_outputs.py::test_exit_and_edges_sum_to_one": {
+      "priority": "core",
+      "weight": 0.07,
+      "rationale": "核心排队网映射、路由或服务率结果，直接影响换线复核能否发布。"
+    },
+    "test_outputs.py::test_service_rates_match_truth": {
+      "priority": "core",
+      "weight": 0.07,
+      "rationale": "核心排队网映射、路由或服务率结果，直接影响换线复核能否发布。"
+    },
+    "test_outputs.py::test_deterministic_throughput_gap_is_small": {
+      "priority": "core",
+      "weight": 0.07,
+      "rationale": "核心排队网映射、路由或服务率结果，直接影响换线复核能否发布。"
+    },
+    "test_outputs.py::test_case_id_is_preserved": {
+      "priority": "core",
+      "weight": 0.07,
+      "rationale": "核心排队网映射、路由或服务率结果，直接影响换线复核能否发布。"
+    },
+    "test_outputs.py::test_minimum_node_count_is_accepted": {
+      "priority": "core",
+      "weight": 0.07,
+      "rationale": "核心排队网映射、路由或服务率结果，直接影响换线复核能否发布。"
+    },
+    "test_outputs.py::test_too_few_nodes_are_rejected": {
+      "priority": "core",
+      "weight": 0.07,
+      "rationale": "核心排队网映射、路由或服务率结果，直接影响换线复核能否发布。"
+    },
+    "test_outputs.py::test_upper_node_count_is_accepted": {
+      "priority": "supporting",
+      "weight": 0.015,
+      "rationale": "支撑输入契约、历史恢复或确定性仿真，保护主结果不被错误批次污染。"
+    },
+    "test_outputs.py::test_too_many_nodes_are_rejected": {
+      "priority": "supporting",
+      "weight": 0.015,
+      "rationale": "支撑输入契约、历史恢复或确定性仿真，保护主结果不被错误批次污染。"
+    },
+    "test_outputs.py::test_duplicate_probe_code_is_rejected": {
+      "priority": "supporting",
+      "weight": 0.015,
+      "rationale": "支撑输入契约、历史恢复或确定性仿真，保护主结果不被错误批次污染。"
+    },
+    "test_outputs.py::test_missing_nested_key_is_rejected": {
+      "priority": "supporting",
+      "weight": 0.015,
+      "rationale": "支撑输入契约、历史恢复或确定性仿真，保护主结果不被错误批次污染。"
+    },
+    "test_outputs.py::test_extra_nested_key_is_rejected": {
+      "priority": "supporting",
+      "weight": 0.015,
+      "rationale": "支撑输入契约、历史恢复或确定性仿真，保护主结果不被错误批次污染。"
+    },
+    "test_outputs.py::test_duplicate_top_key_is_rejected": {
+      "priority": "supporting",
+      "weight": 0.015,
+      "rationale": "支撑输入契约、历史恢复或确定性仿真，保护主结果不被错误批次污染。"
+    },
+    "test_outputs.py::test_duplicate_nested_key_is_rejected": {
+      "priority": "supporting",
+      "weight": 0.015,
+      "rationale": "支撑输入契约、历史恢复或确定性仿真，保护主结果不被错误批次污染。"
+    },
+    "test_outputs.py::test_boolean_schema_version_is_rejected": {
+      "priority": "supporting",
+      "weight": 0.015,
+      "rationale": "支撑输入契约、历史恢复或确定性仿真，保护主结果不被错误批次污染。"
+    },
+    "test_outputs.py::test_nonfinite_departure_is_rejected": {
+      "priority": "supporting",
+      "weight": 0.015,
+      "rationale": "支撑输入契约、历史恢复或确定性仿真，保护主结果不被错误批次污染。"
+    },
+    "test_outputs.py::test_service_class_is_enumerated": {
+      "priority": "supporting",
+      "weight": 0.015,
+      "rationale": "支撑输入契约、历史恢复或确定性仿真，保护主结果不被错误批次污染。"
+    },
+    "test_outputs.py::test_exactly_one_entry_is_required": {
+      "priority": "supporting",
+      "weight": 0.015,
+      "rationale": "支撑输入契约、历史恢复或确定性仿真，保护主结果不被错误批次污染。"
+    },
+    "test_outputs.py::test_self_edge_is_rejected": {
+      "priority": "supporting",
+      "weight": 0.015,
+      "rationale": "支撑输入契约、历史恢复或确定性仿真，保护主结果不被错误批次污染。"
+    },
+    "test_outputs.py::test_history_keys_are_exact": {
+      "priority": "supporting",
+      "weight": 0.015,
+      "rationale": "支撑输入契约、历史恢复或确定性仿真，保护主结果不被错误批次污染。"
+    },
+    "test_outputs.py::test_first_run_appends_one_record": {
+      "priority": "supporting",
+      "weight": 0.015,
+      "rationale": "支撑输入契约、历史恢复或确定性仿真，保护主结果不被错误批次污染。"
+    },
+    "test_outputs.py::test_repeated_input_is_idempotent": {
+      "priority": "supporting",
+      "weight": 0.015,
+      "rationale": "支撑输入契约、历史恢复或确定性仿真，保护主结果不被错误批次污染。"
+    },
+    "test_outputs.py::test_changed_input_appends_record": {
+      "priority": "supporting",
+      "weight": 0.015,
+      "rationale": "支撑输入契约、历史恢复或确定性仿真，保护主结果不被错误批次污染。"
+    },
+    "test_outputs.py::test_failed_input_preserves_history": {
+      "priority": "supporting",
+      "weight": 0.015,
+      "rationale": "支撑输入契约、历史恢复或确定性仿真，保护主结果不被错误批次污染。"
+    },
+    "test_outputs.py::test_history_fingerprint_is_raw_sha256": {
+      "priority": "supporting",
+      "weight": 0.015,
+      "rationale": "支撑输入契约、历史恢复或确定性仿真，保护主结果不被错误批次污染。"
+    },
+    "test_outputs.py::test_report_and_history_are_compact": {
+      "priority": "supporting",
+      "weight": 0.015,
+      "rationale": "支撑输入契约、历史恢复或确定性仿真，保护主结果不被错误批次污染。"
+    },
+    "test_outputs.py::test_status_is_calibrated": {
+      "priority": "supporting",
+      "weight": 0.015,
+      "rationale": "支撑输入契约、历史恢复或确定性仿真，保护主结果不被错误批次污染。"
+    },
+    "test_outputs.py::test_run_finishes_below_public_limit": {
+      "priority": "supporting",
+      "weight": 0.02,
+      "rationale": "支撑输入契约、历史恢复或确定性仿真，保护主结果不被错误批次污染。"
+    }
+  }
+}
