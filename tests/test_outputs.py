@@ -7,6 +7,8 @@ import subprocess
 import time
 from pathlib import Path
 
+import pytest
+
 
 ENTRY = os.environ.get("QUEUE_ENTRY", "/app/queue_network.py")
 DATA_DIR = Path(os.environ.get("QUEUE_DATA_DIR", "/app/data"))
@@ -157,6 +159,26 @@ def test_service_rates_match_truth(tmp_path):
     expected = load_json(GOLDEN)["service_rates"]
     assert process.returncode == 0
     assert all(abs(actual[node] - value) < 0.02 for node, value in expected.items())
+
+
+def test_service_rate_uses_all_departures_over_all_busy_seconds(tmp_path):
+    """题面锁定服务率为六次离开量之和除以六次占用时间之和。"""
+    payload = main_payload()
+    process, report, _ = invoke(tmp_path, payload)
+    data = load_json(report)
+    assert process.returncode == 0
+    probes = {item["probe_code"]: item for item in payload["probes"]}
+    probe_by_node = {
+        item["node_code"]: item["probe_code"] for item in data["node_map"]
+    }
+    service = {
+        item["node_code"]: item["jobs_per_second"]
+        for item in data["service_rates"]
+    }
+    for node, probe_code in probe_by_node.items():
+        probe = probes[probe_code]
+        expected = sum(probe["departures"]) / sum(probe["busy_s"])
+        assert service[node] == pytest.approx(round(expected, 6), abs=1e-6)
 
 
 def test_deterministic_throughput_gap_is_small(tmp_path):

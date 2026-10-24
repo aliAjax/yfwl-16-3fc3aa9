@@ -6,7 +6,8 @@
     "core_min_share": 0.5
   },
   "gate_tests": [
-    "test_outputs.py::test_main_queue_gate"
+    "test_outputs.py::test_main_queue_gate",
+    "test_outputs.py::test_service_rate_uses_all_departures_over_all_busy_seconds"
   ],
   "tests": {
     "test_outputs.py::test_success_channels_are_empty": {
